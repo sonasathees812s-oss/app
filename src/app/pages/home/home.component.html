@@ -1,0 +1,21 @@
+<div class="header">
+  <h1 class="app-title">Notes & TO-DO App</h1>
+  <span class="home-link">Home</span>
+</div>
+
+<div class="container">
+  <div class="welcome">Welcome!</div>
+  <div class="subtitle">Choose an option:</div>
+
+  <div class="options">
+    <a routerLink="/notes" class="option-button notes-button">
+      <div class="icon" [innerHTML]="notesIcon"></div>
+      <span class="button-text">Notes</span>
+    </a>
+
+    <a routerLink="/todo" class="option-button todo-button">
+      <div class="icon" [innerHTML]="todoIcon"></div>
+      <span class="button-text">To-Do List</span>
+    </a>
+  </div>
+</div>

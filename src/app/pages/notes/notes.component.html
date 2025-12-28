@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="header">
+    <h1>{{ constants.PAGE_TITLE }}</h1>
+  </div>
+
+  <div class="add-note-section">
+    <div class="input-row">
+      <input
+        type="text"
+        [(ngModel)]="title"
+        [placeholder]="constants.TITLE_PLACEHOLDER"
+        class="title-input"
+        (keyup.enter)="addNote()"
+      />
+      <button
+        class="add-button"
+        (click)="addNote()"
+      >
+        {{ constants.ADD_NOTE_BUTTON }}
+      </button>
+    </div>
+    <textarea
+      [(ngModel)]="content"
+      [placeholder]="constants.CONTENT_PLACEHOLDER"
+      rows="5"
+      class="content-input"
+    ></textarea>
+  </div>
+
+  <div class="notes-list" *ngIf="notes.length > 0">
+    <div *ngFor="let note of notes" class="note-card">
+      <div class="note-header" *ngIf="note.title">
+        <h3>{{ note.title }}</h3>
+      </div>
+      <div class="note-body">
+        <p>{{ note.content }}</p>
+      </div>
+      <div class="note-footer">
+        <button
+          class="delete-button"
+          (click)="deleteNote(note.id)"
+        >
+          {{ constants.DELETE_BUTTON }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="notes.length === 0">
+    <p>{{ constants.EMPTY_STATE_MESSAGE }}</p>
+  </div>
+</div>
