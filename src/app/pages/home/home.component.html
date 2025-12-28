@@ -1,21 +1,30 @@
-<div class="header">
-  <h1 class="app-title">Notes & TO-DO App</h1>
-  <span class="home-link">Home</span>
-</div>
+<p-panel header="Notes & TO-DO App" styleClass="header-panel">
+  <div class="container">
+    <h2 class="welcome">Welcome!</h2>
+    <p class="subtitle">Choose an option:</p>
 
-<div class="container">
-  <div class="welcome">Welcome!</div>
-  <div class="subtitle">Choose an option:</div>
+    <div class="options">
+      <p-card class="option-card notes-card">
+        <a routerLink="/notes" class="option-link">
+          <div class="icon" [innerHTML]="notesIcon"></div>
+          <p-button
+            label="Notes"
+            icon="pi pi-file-edit"
+            styleClass="p-button-lg option-button">
+          </p-button>
+        </a>
+      </p-card>
 
-  <div class="options">
-    <a routerLink="/notes" class="option-button notes-button">
-      <div class="icon" [innerHTML]="notesIcon"></div>
-      <span class="button-text">Notes</span>
-    </a>
-
-    <a routerLink="/todo" class="option-button todo-button">
-      <div class="icon" [innerHTML]="todoIcon"></div>
-      <span class="button-text">To-Do List</span>
-    </a>
+      <p-card class="option-card todo-card">
+        <a routerLink="/todo" class="option-link">
+          <div class="icon" [innerHTML]="todoIcon"></div>
+          <p-button
+            label="To-Do List"
+            icon="pi pi-check-square"
+            styleClass="p-button-lg option-button">
+          </p-button>
+        </a>
+      </p-card>
+    </div>
   </div>
-</div>
+</p-panel>

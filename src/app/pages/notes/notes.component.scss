@@ -6,23 +6,16 @@
   min-height: 100vh;
 }
 
-.header {
+::ng-deep .header-panel {
   margin-bottom: 2rem;
-
-  h1 {
-    margin: 0;
-    color: color(text-primary);
-    font-size: 2rem;
-    font-weight: 600;
-  }
 }
 
 .add-note-section {
-  background-color: color(bg-white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 4px color(shadow-light);
+  padding: 1rem 0;
+
+  textarea {
+    width: 100%;
+  }
 }
 
 .input-row {
@@ -30,75 +23,13 @@
   gap: 1rem;
   margin-bottom: 1rem;
   align-items: center;
-}
 
-.title-input {
-  flex: 1;
-  width: 100%;
-  border-radius: 6px;
-  border: 1px solid color(border-light);
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-family: inherit;
-  background-color: color(bg-white);
-  color: color(text-primary);
-
-  &::placeholder {
-    color: color(text-placeholder);
+  .input-wrapper {
+    flex: 1;
   }
 
-  &:focus {
-    outline: none;
-    border-color: color(primary);
-    box-shadow: 0 0 0 0.2rem color(shadow-primary);
-  }
-}
-
-.add-button {
-  background: linear-gradient(180deg, color(primary) 0%, color(primary-dark) 100%);
-  border: none;
-  border-radius: 6px;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 1rem;
-  color: color(text-white);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px color(shadow-primary-medium);
-  white-space: nowrap;
-  font-family: inherit;
-
-  &:hover {
-    background: linear-gradient(180deg, color(primary-dark) 0%, color(primary-darker) 100%);
-    box-shadow: 0 4px 8px color(shadow-primary-dark);
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 2px color(shadow-primary-medium);
-  }
-}
-
-.content-input {
-  width: 100%;
-  border-radius: 6px;
-  border: 1px solid color(border-light);
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: vertical;
-  background-color: color(bg-white);
-  color: color(text-primary);
-
-  &::placeholder {
-    color: color(text-placeholder);
-  }
-
-  &:focus {
-    outline: none;
-    border-color: color(primary);
-    box-shadow: 0 0 0 0.2rem color(shadow-primary);
+  input {
+    width: 100%;
   }
 }
 
@@ -108,13 +39,8 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.note-card {
-  background-color: color(bg-white);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px color(shadow-light);
+::ng-deep .note-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
 
   &:hover {
     transform: translateY(-2px);
@@ -124,7 +50,6 @@
 
 .note-header {
   padding: 1rem 1rem 0.5rem;
-  border-bottom: 1px solid color(border-lighter);
 
   h3 {
     margin: 0;
@@ -148,37 +73,13 @@
 }
 
 .note-footer {
-  padding: 0.5rem 1rem 1rem;
   display: flex;
   justify-content: flex-end;
-  border-top: 1px solid color(border-lighter);
-}
-
-.delete-button {
-  background: transparent;
-  border: none;
-  color: color(error);
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
-  font-family: inherit;
-
-  &:hover {
-    background-color: color(error-light);
-  }
-
-  &:active {
-    background-color: color(error-lighter);
-  }
 }
 
 .empty-state {
+  margin-top: 2rem;
   text-align: center;
-  padding: 3rem;
-  color: color(text-placeholder);
-  font-style: italic;
 }
 
 // Responsive design
@@ -190,10 +91,6 @@
   .input-row {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .add-button {
-    width: 100%;
   }
 
   .notes-list {
