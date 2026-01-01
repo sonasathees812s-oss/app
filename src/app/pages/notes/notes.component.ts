@@ -19,7 +19,6 @@ export class NotesComponent implements OnInit {
   notes: Note[] = [];
   private nextId: number = 1;
 
-  // Constants
   readonly constants = AppConstants.NOTES;
 
   constructor() { }
