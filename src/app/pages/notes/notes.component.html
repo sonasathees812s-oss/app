@@ -1,0 +1,62 @@
+<div class="container">
+  <p-panel [header]="constants.PAGE_TITLE" styleClass="header-panel">
+    <div class="add-note-section">
+      <div class="input-row">
+        <span class="p-input-icon-left input-wrapper">
+          <i class="pi pi-pencil"></i>
+          <input
+            type="text"
+            pInputText
+            [(ngModel)]="title"
+            [placeholder]="constants.TITLE_PLACEHOLDER"
+            (keyup.enter)="addNote()"
+          />
+        </span>
+        <p-button
+          label="{{ constants.ADD_NOTE_BUTTON }}"
+          icon="pi pi-plus"
+          (onClick)="addNote()"
+          styleClass="p-button-primary">
+        </p-button>
+      </div>
+      <p-divider></p-divider>
+      <textarea
+        pInputTextarea
+        [(ngModel)]="content"
+        [placeholder]="constants.CONTENT_PLACEHOLDER"
+        [rows]="5"
+        [autoResize]="true"
+      ></textarea>
+    </div>
+  </p-panel>
+
+  <div class="notes-list" *ngIf="notes.length > 0">
+    <p-card *ngFor="let note of notes" styleClass="note-card">
+      <ng-template pTemplate="header" *ngIf="note.title">
+        <div class="note-header">
+          <h3>{{ note.title }}</h3>
+        </div>
+      </ng-template>
+      <div class="note-body">
+        <p>{{ note.content }}</p>
+      </div>
+      <ng-template pTemplate="footer">
+        <div class="note-footer">
+          <p-button
+            label="{{ constants.DELETE_BUTTON }}"
+            icon="pi pi-trash"
+            (onClick)="deleteNote(note.id)"
+            styleClass="p-button-danger p-button-text">
+          </p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+
+  <p-message
+    *ngIf="notes.length === 0"
+    severity="info"
+    [text]="constants.EMPTY_STATE_MESSAGE"
+    styleClass="empty-state">
+  </p-message>
+</div>

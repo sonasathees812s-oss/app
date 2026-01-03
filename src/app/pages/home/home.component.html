@@ -1,0 +1,30 @@
+<p-panel header="Notes & TO-DO App" styleClass="header-panel">
+  <div class="container">
+    <h2 class="welcome">Welcome!</h2>
+    <p class="subtitle">Choose an option:</p>
+
+    <div class="options">
+      <p-card class="option-card notes-card">
+        <a routerLink="/notes" class="option-link">
+          <div class="icon" [innerHTML]="notesIcon"></div>
+          <p-button
+            label="Notes"
+            icon="pi pi-file-edit"
+            styleClass="p-button-lg option-button">
+          </p-button>
+        </a>
+      </p-card>
+
+      <p-card class="option-card todo-card">
+        <a routerLink="/todo" class="option-link">
+          <div class="icon" [innerHTML]="todoIcon"></div>
+          <p-button
+            label="To-Do List"
+            icon="pi pi-check-square"
+            styleClass="p-button-lg option-button">
+          </p-button>
+        </a>
+      </p-card>
+    </div>
+  </div>
+</p-panel>

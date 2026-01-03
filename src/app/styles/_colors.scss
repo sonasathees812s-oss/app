@@ -1,0 +1,39 @@
+// Color Palette
+$colors: (
+  // Primary Colors
+  primary: #ff9800,
+  primary-dark: #f57c00,
+  primary-darker: #e65100,
+  
+  // Background Colors
+  bg-primary: #f5f5f5,
+  bg-white: #ffffff,
+  
+  // Text Colors
+  text-primary: #333,
+  text-secondary: #666,
+  text-placeholder: #999,
+  text-white: #ffffff,
+  
+  // Border Colors
+  border-light: #e0e0e0,
+  border-lighter: #f0f0f0,
+  
+  // Error/Danger Colors
+  error: #d32f2f,
+  error-light: #ffebee,
+  error-lighter: #ffcdd2,
+  
+  // Shadow Colors
+  shadow-light: rgba(0, 0, 0, 0.1),
+  shadow-medium: rgba(0, 0, 0, 0.15),
+  shadow-primary: rgba(255, 152, 0, 0.2),
+  shadow-primary-medium: rgba(255, 152, 0, 0.3),
+  shadow-primary-dark: rgba(255, 152, 0, 0.4)
+);
+
+// Helper function to get color
+@function color($name) {
+  @return map-get($colors, $name);
+}
+

@@ -1,0 +1,99 @@
+@import '../../styles/colors';
+
+.container {
+  padding: 2rem;
+  background-color: color(bg-primary);
+  min-height: 100vh;
+}
+
+::ng-deep .header-panel {
+  margin-bottom: 2rem;
+}
+
+.add-note-section {
+  padding: 1rem 0;
+
+  textarea {
+    width: 100%;
+  }
+}
+
+.input-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+
+  .input-wrapper {
+    flex: 1;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.notes-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+::ng-deep .note-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px color(shadow-medium);
+  }
+}
+
+.note-header {
+  padding: 1rem 1rem 0.5rem;
+
+  h3 {
+    margin: 0;
+    color: color(text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.note-body {
+  padding: 0.5rem 1rem;
+  flex: 1;
+
+  p {
+    margin: 0;
+    color: color(text-secondary);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+.note-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty-state {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .notes-list {
+    grid-template-columns: 1fr;
+  }
+}
+
